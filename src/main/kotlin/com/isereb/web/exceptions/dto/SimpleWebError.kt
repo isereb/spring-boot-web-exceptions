@@ -1,5 +1,6 @@
-package com.isereb.web.exceptions
+package com.isereb.web.exceptions.dto
 
+import com.isereb.web.exceptions.InternalException
 import org.springframework.http.HttpStatus
 
 class SimpleWebError(
