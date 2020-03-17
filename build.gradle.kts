@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 group = "com.github.isereb"
-version = "1.0.2"
+version = "1.0.3"
 
 plugins {
     id("org.springframework.boot") version "2.2.5.RELEASE"
@@ -46,12 +46,19 @@ tasks.withType<KotlinCompile> {
 }
 
 tasks {
+    val compiledJar by creating(Jar::class) {
+        dependsOn(JavaPlugin.CLASSES_TASK_NAME)
+        from(compileKotlin)
+    }
+
     val sourcesJar by creating(Jar::class) {
         dependsOn(JavaPlugin.CLASSES_TASK_NAME)
+        archiveClassifier.set("sources")
         from(sourceSets["main"].allSource)
     }
 
     artifacts {
+        add("archives", compiledJar)
         add("archives", sourcesJar)
     }
 }
