@@ -44,3 +44,14 @@ tasks.withType<KotlinCompile> {
         jvmTarget = "1.8"
     }
 }
+
+tasks {
+    val sourcesJar by creating(Jar::class) {
+        dependsOn(JavaPlugin.CLASSES_TASK_NAME)
+        from(sourceSets["main"].allSource)
+    }
+
+    artifacts {
+        add("archives", sourcesJar)
+    }
+}
