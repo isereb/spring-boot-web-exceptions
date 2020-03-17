@@ -1,4 +1,4 @@
-package net.geratek.api.errors.web
+package com.isereb.web.exceptions
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize
 import org.springframework.http.HttpStatus

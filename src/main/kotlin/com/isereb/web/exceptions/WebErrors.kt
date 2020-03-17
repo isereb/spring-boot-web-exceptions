@@ -1,4 +1,4 @@
-package net.geratek.api.errors.web
+package com.isereb.web.exceptions
 
 import org.springframework.http.HttpStatus
 
