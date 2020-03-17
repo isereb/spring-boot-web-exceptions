@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 group = "com.github.isereb"
-version = "1.0.0"
+version = "1.0.2"
 
 plugins {
     id("org.springframework.boot") version "2.2.5.RELEASE"
