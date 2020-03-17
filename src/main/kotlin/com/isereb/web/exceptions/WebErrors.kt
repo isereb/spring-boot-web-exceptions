@@ -1,8 +1,15 @@
 package com.isereb.web.exceptions
 
+import com.isereb.web.exceptions.dto.ErroneousField
+import com.isereb.web.exceptions.dto.SimpleWebError
+import com.isereb.web.exceptions.dto.ValidationWebError
 import org.springframework.http.HttpStatus
 
+/**
+ * Static factory for construction of different kinds of exceptions
+ */
 class WebErrors {
+
     companion object {
 
         @JvmStatic fun notFound(message: String) =
