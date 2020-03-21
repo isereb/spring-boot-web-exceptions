@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler
 
 @Configuration
 @ControllerAdvice
-class AutoConfig {
+class WebExceptionsConfiguration {
     @ExceptionHandler(InternalException::class)
     fun handleInternalException(ex: InternalException): ResponseEntity<WebError> =
             ResponseEntity
