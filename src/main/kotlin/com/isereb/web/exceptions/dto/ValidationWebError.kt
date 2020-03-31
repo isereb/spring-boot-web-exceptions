@@ -1,5 +1,6 @@
 package com.isereb.web.exceptions.dto
 
+import com.fasterxml.jackson.annotation.JsonProperty
 import com.isereb.web.exceptions.InternalException
 import org.springframework.http.HttpStatus
 
@@ -10,8 +11,8 @@ class ValidationWebError(
         private val fields: Array<out ErroneousField>)
     : InternalException(status, message, description), WebError {
 
-    override fun status(): HttpStatus = status
-    override fun message(): String = message
-    override fun description(): String? = message
-    override fun fields(): Array<out ErroneousField> = fields
+    @JsonProperty override fun status(): HttpStatus = status
+    @JsonProperty override fun message(): String = message
+    @JsonProperty override fun description(): String? = message
+    @JsonProperty override fun fields(): Array<out ErroneousField> = fields
 }
