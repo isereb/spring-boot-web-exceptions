@@ -20,5 +20,24 @@ class WebErrors {
 
         @JvmStatic fun badRequest(message: String, description: String, vararg fields: ErroneousField) =
                 ValidationWebError(HttpStatus.BAD_REQUEST, message, description, fields)
+
+        @JvmStatic fun unauthorized(message: String, description: String?) =
+                SimpleWebError(HttpStatus.UNAUTHORIZED, message, description)
+
+        @JvmStatic fun forbidden(message: String, description: String?) =
+                SimpleWebError(HttpStatus.FORBIDDEN, message, description)
+
+        @JvmStatic fun internalError(message: String, description: String?) =
+                SimpleWebError(HttpStatus.INTERNAL_SERVER_ERROR, message, description)
+
+        @JvmStatic fun notImplemented(message: String, description: String?) =
+                SimpleWebError(HttpStatus.NOT_IMPLEMENTED, message, description)
+
+        @JvmStatic fun badGateway(message: String, description: String?) =
+                SimpleWebError(HttpStatus.BAD_GATEWAY, message, description)
+
+        @JvmStatic fun serviceUnavailable(message: String, description: String?) =
+                SimpleWebError(HttpStatus.SERVICE_UNAVAILABLE, message, description)
+
     }
 }
