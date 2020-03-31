@@ -12,11 +12,11 @@ class WebErrors {
 
     companion object {
 
-        @JvmStatic fun notFound(message: String) =
-                SimpleWebError(HttpStatus.NOT_FOUND, message)
+        @JvmStatic fun notFound(message: String, description: String?) =
+                SimpleWebError(HttpStatus.NOT_FOUND, message, description)
 
-        @JvmStatic fun badRequest(message: String) =
-                SimpleWebError(HttpStatus.BAD_REQUEST, message)
+        @JvmStatic fun badRequest(message: String, description: String?) =
+                SimpleWebError(HttpStatus.BAD_REQUEST, message, description)
 
         @JvmStatic fun badRequest(message: String, description: String, vararg fields: ErroneousField) =
                 ValidationWebError(HttpStatus.BAD_REQUEST, message, description, fields)
